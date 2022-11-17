@@ -11,7 +11,7 @@
     "build:dev": "node scripts/build.js dev",
     "build:prod": "NODE_ENV=production node scripts/build.js prod",
     "start:dev": "node dist/bundle.dev.js",
-    "start:prod": "node dist/bundle.prod.js",
+    "start:prod": "NODE_ENV=production node dist/bundle.prod.js",
     "test": "jest",
     "lint": "eslint",
     "format": "prettier --write --loglevel silent .",
