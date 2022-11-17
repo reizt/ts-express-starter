@@ -1,0 +1,50 @@
+---
+root: true
+env:
+  es2022: true
+  node: true
+ignorePatterns:
+  - /node_modules/**/*
+  - /dist/**/*
+  - /scripts/**/*.js
+  - /tmp/**/*
+  - /jest.config.ts
+extends:
+  - eslint:recommended
+  - standard-with-typescript
+  - prettier
+plugins:
+  - '@typescript-eslint'
+parser: '@typescript-eslint/parser'
+parserOptions:
+  project: './tsconfig.json'
+rules:
+  '@typescript-eslint/no-unnecessary-condition': error
+  '@typescript-eslint/restrict-template-expressions': error
+
+  semi: off
+  comma-dangle: off
+  space-before-function-paren: off
+  no-case-declarations: off
+  indent: off
+  multiline-ternary: off
+  no-unused-vars:
+    - error
+    - vars: all
+      args: none
+      varsIgnorePattern: '^_'
+  '@typescript-eslint/space-before-function-paren': off
+  '@typescript-eslint/explicit-function-return-type': off
+  '@typescript-eslint/semi': off
+  '@typescript-eslint/member-delimiter-style': off
+  '@typescript-eslint/consistent-type-definitions': off
+  '@typescript-eslint/array-type': off
+  '@typescript-eslint/prefer-optional-chain': off
+  '@typescript-eslint/no-floating-promises': off
+  '@typescript-eslint/indent': off
+  '@typescript-eslint/no-misused-promises': off
+  '@typescript-eslint/no-namespace': off
+  '@typescript-eslint/no-non-null-assertion': off
+  '@typescript-eslint/no-unused-vars': off
+  '@typescript-eslint/no-invalid-void-type': off
+  '@typescript-eslint/prefer-ts-expect-error': off

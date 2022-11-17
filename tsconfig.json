@@ -1,0 +1,46 @@
+/* Visit https://aka.ms/tsconfig to read more about this file */
+{
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "scripts", "tmp"],
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "Node16",
+    "moduleResolution": "node",
+    "baseUrl": "./",
+    "outDir": "dist",
+    "paths": {
+      "#/*": ["./src/*"]
+    },
+    "sourceMap": false,
+    "resolveJsonModule": true,
+    "forceConsistentCasingInFileNames": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": true,
+    "checkJs": false,
+    "composite": true,
+    "diagnostics": true,
+    "extendedDiagnostics": true,
+    "incremental": true,
+    "isolatedModules": true,
+
+    // syntax
+    "strict": true,
+    "importsNotUsedAsValues": "preserve",
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": false,
+    "noUncheckedIndexedAccess": true,
+    // "noImplicitOverride": true,
+    "allowSyntheticDefaultImports": true,
+    "allowUmdGlobalAccess": false,
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": false,
+    "keyofStringsOnly": true,
+    "noPropertyAccessFromIndexSignature": false,
+    "noStrictGenericChecks": false,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "strictNullChecks": true
+  }
+}
