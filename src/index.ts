@@ -1,7 +1,13 @@
-import { welcomeMessage } from './welcome';
+import express from 'express';
 
-const projectName: string = 'TypeScript scaffolder';
+const app = express();
+const PORT = 3000;
 
-const message = welcomeMessage(projectName);
+app.get('/', (req, res, next) => {
+  const message = 'Hello world!';
+  res.status(200).send({ message });
+});
 
-console.log(message);
+app.listen(PORT, () => {
+  console.log(`Server is running at http://localhost:${PORT}`);
+});

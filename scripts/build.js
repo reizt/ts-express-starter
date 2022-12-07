@@ -13,17 +13,18 @@ const isDev = env === 'dev';
 
 /** @type {import('esbuild').BuildOptions} */
 const options = {
-  entryPoints: [isDev ? resolve(__dirname, '../src/index.ts') : resolve(__dirname, '../src/index.ts')],
   outfile: isDev ? resolve(__dirname, '../dist/bundle.dev.js') : resolve(__dirname, '../dist/bundle.prod.js'),
-  minify: isDev ? false : true,
-  sourcemap: isDev ? true : false,
+  minify: !isDev,
+  sourcemap: isDev,
+  // do not bundle dependencies when development
+  external: isDev ? [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})] : undefined,
 
+  entryPoints: [resolve(__dirname, '../src/index.ts')],
   define: { 'process.env.NODE_ENV': `"${process.env.NODE_ENV}"` },
   target: 'es2022',
   platform: 'node',
   color: true,
   bundle: true,
-  external: [...Object.keys(pkg.dependencies || {}), ...Object.keys(pkg.peerDependencies || {})],
 };
 
 build(options)
